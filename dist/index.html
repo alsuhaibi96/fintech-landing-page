@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101015">
+  <title>Nickel — Unlock growth with every payment</title>
+  <meta name="description" content="Run payments, extend net terms and automate collections compliance. A new perspective on business payments.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23101015'/%3E%3Cpath d='M20 5 31 10 35 21 29 32 17 35 7 27 5 16 11 8Z' fill='white'/%3E%3Cpath d='m15 13 7 2 6-1-2 7 1 6-7-2-6 1 2-7Z' fill='%23101015'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <div class="scene" aria-hidden="true">
+      <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="/assets/hero-poster.webp"><source src="/assets/hero.mp4" type="video/mp4"></video>
+    </div>
+    <header class="header">
+      <a class="brand" href="/" aria-label="Nickel home"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 31 8 37 20 31 32 18 37 6 29 3 17 10 7Z" fill="currentColor"/><path d="m14 12 8 3 7-2-3 8 2 7-8-3-7 2 3-8Z" fill="#0c0c10"/></svg><span>nickel</span></a>
+      <button class="mobile-toggle" aria-controls="navigation" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
+      <nav id="navigation" aria-label="Main navigation">
+        <div class="nav-dropdown products">
+          <button class="nav-button outlined" aria-expanded="false" aria-controls="products-menu">Products <span class="chevron"></span></button>
+          <div class="dropdown" id="products-menu" hidden>
+            <span class="menu-label">Move business forward</span>
+            <button data-panel="payments"><strong>Payments</strong><span>A simpler way to pay and get paid.</span></button>
+            <button data-panel="terms"><strong>Net terms</strong><span>More flexibility for every transaction.</span></button>
+            <button data-panel="collections"><strong>Collections</strong><span>Keep your receivables moving.</span></button>
+          </div>
+        </div>
+        <div class="nav-middle">
+          <div class="nav-dropdown">
+            <button class="nav-button" aria-expanded="false" aria-controls="company-menu">Company <span class="chevron"></span></button>
+            <div class="dropdown" id="company-menu" hidden><button data-panel="about"><strong>About Nickel</strong><span>Built around the way business moves.</span></button><button data-action="contact"><strong>Contact</strong><span>Let's start a conversation.</span></button></div>
+          </div>
+          <button class="nav-button" data-panel="pricing">Pricing</button>
+          <button class="nav-button" data-panel="accountants">For Accountants</button>
+        </div>
+        <div class="nav-end"><button class="nav-button" data-action="login">Log in</button><button class="button nav-cta" data-action="signup">Get started</button></div>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="hero-copy">
+        <h1>Unlock growth<br>with every<br>payment</h1>
+        <p>Run payments, extend net terms and automate<br class="desktop-break"> collections compliance.</p>
+        <div class="hero-actions"><button class="button primary" data-action="signup">Get started</button><button class="button secondary" data-action="contact">Talk to a human</button></div>
+      </div>
+    </main>
+    <button class="motion-toggle" aria-label="Pause background animation" title="Pause background animation"><svg class="pause-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10M13 5v10"/></svg><svg class="play-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 5 8 5-8 5Z"/></svg></button>
+  </div>
+  <dialog id="details-dialog" aria-labelledby="dialog-title"><button class="close-dialog" aria-label="Close dialog">×</button><span class="dialog-eyebrow">NICKEL</span><h2 id="dialog-title"></h2><p id="dialog-description"></p><div id="dialog-extra"></div><button class="button primary dialog-done">Back to home</button></dialog>
+</body>
+</html>

@@ -1,0 +1,6 @@
+work/
+outputs/
+.sites-runtime/
+node_modules/
+.env*
+.DS_Store
