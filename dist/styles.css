@@ -34,3 +34,54 @@
 @media(max-width:540px){.site-shell{min-height:100svh}.header{width:calc(100% - 40px);margin-top:20px;padding:12px 16px}.brand{font-size:30px}.hero-copy{width:calc(100% - 48px);margin-top:77px;padding-bottom:310px}.hero-copy h1{font-size:clamp(46px,12vw,64px);line-height:1.035;letter-spacing:-.045em;margin-bottom:24px}.hero-copy p{font-size:17px;line-height:1.55;max-width:335px;margin-bottom:28px}.desktop-break{display:none}.hero-actions{gap:10px}.hero-actions .button{min-width:0;font-size:14px;min-height:51px;padding:0 22px}.scene{background:#101015}.scene video{position:absolute;inset:auto 0 0;width:100%;height:70%;object-fit:cover;object-position:68% bottom}.scene:after{background:linear-gradient(180deg,#101015 0%,#101015 22%,#101015ed 35%,#10101590 53%,transparent 77%)}.motion-toggle{right:20px;bottom:20px;width:36px;height:36px}dialog{padding:40px 26px 28px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
 .demo-options{display:grid;gap:10px;margin-top:24px}.demo-options button{background:#ffffff06;border:1px solid #ffffff16;padding:20px;border-radius:12px;text-align:left;font-size:18px}.demo-options button:hover{border-color:#ff702f;background:#ff702f0a}.demo-options span{display:block;color:#a0a0ae;font-size:14px;margin-top:6px}.demo-note{font-size:13px!important;color:#9292a2!important;margin-top:20px}.sample-user{display:flex;align-items:center;gap:14px;margin:25px 0;color:#a0a0ae}.sample-user strong{color:#eee;font-size:17px}.avatar{display:grid;place-items:center;height:48px;width:48px;border-radius:50%;background:#ff702f20;color:#ff9a66;font-size:16px}.demo-times{border:0;padding:0;margin:25px 0 0;display:flex;gap:8px;flex-wrap:wrap}.demo-times legend{padding:0;margin-bottom:14px;font-size:14px}.demo-times label{display:flex;align-items:center;gap:8px;border:1px solid #ffffff20;border-radius:8px;padding:12px;color:#eee;cursor:pointer}.demo-times input{accent-color:#ff702f}.demo-stats{display:grid;gap:12px;margin:24px 0}.demo-stats>div{padding:20px;border:1px solid #ffffff15;border-radius:12px;background:#ffffff04}.demo-stats strong{display:block;font-size:36px;font-weight:500;line-height:1.4;color:#fff;letter-spacing:-.04em}.demo-stats .currency{font-size:26px;color:#9999a8}.demo-invoice{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid #ffffff10;font-size:13px}.paid{color:#99cbb6}
+
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(/assets/arabic-400.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(/assets/arabic-500.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(/assets/arabic-600.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(/assets/arabic-700.ttf) format('truetype');
+}
+/* Arabic layout: mirror the scene so the copy keeps its clear space. */
+html[dir=rtl]{font-family:'Noto Sans Arabic',Arial,sans-serif}
+html[dir=rtl] .scene{transform:scaleX(-1)}
+html[dir=rtl] .brand{font-size:clamp(25px,2.3vw,36px);letter-spacing:0;white-space:nowrap}
+html[dir=rtl] h1{font-size:clamp(56px,5.1vw,86px);line-height:1.4;letter-spacing:0;font-weight:600;margin-bottom:22px}
+html[dir=rtl] .hero-copy{margin-top:clamp(60px,8vh,120px)}
+html[dir=rtl] .hero-copy p{letter-spacing:0;line-height:1.9;margin-bottom:30px}
+html[dir=rtl] .dropdown{left:auto;right:0}
+html[dir=rtl] .dropdown button,html[dir=rtl] .demo-options button{text-align:right}
+html[dir=rtl] .menu-label,html[dir=rtl] .dialog-eyebrow{letter-spacing:0}
+html[dir=rtl] .close-dialog{right:auto;left:16px}
+html[dir=rtl] dialog h2{letter-spacing:0;line-height:1.6;font-size:30px}
+html[dir=rtl] dialog p{line-height:1.9}
+html[dir=rtl] .demo-stats strong{direction:ltr;text-align:right}
+html[dir=rtl] .demo-invoice{line-height:1.9}
+@media(max-width:1100px) and (min-width:901px){html[dir=rtl] .header{gap:14px}html[dir=rtl] .nav-middle,html[dir=rtl] .nav-end{gap:12px}html[dir=rtl] .brand{font-size:24px}html[dir=rtl] .header nav{gap:14px}}
+@media(max-width:900px){html[dir=rtl] .hero-copy{margin-top:70px}html[dir=rtl] .hero-copy h1{font-size:clamp(52px,7vw,70px)}}
+@media(max-width:540px){html[dir=rtl] .hero-copy{margin-top:60px;padding-bottom:280px}html[dir=rtl] .hero-copy h1{font-size:clamp(40px,11vw,56px);line-height:1.45}html[dir=rtl] .brand{font-size:27px}html[dir=rtl] .hero-copy p{font-size:17px}html[dir=rtl] .demo-times{flex-direction:column}html[dir=rtl] dialog h2{font-size:27px}}

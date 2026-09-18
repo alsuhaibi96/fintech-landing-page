@@ -1,15 +1,15 @@
 // Optional production destinations. Empty values use the interactive demo flows.
 const destinations = { signup: '', contact: '', login: '' };
 const panels = {
-  payments: ['Payments that move with you', 'Bring business payments into one place, with a clear view of what’s coming in and what’s going out.'],
-  terms: ['Give your business room to grow', 'Flexible payment terms can help businesses align payments with their cash flow.'],
-  collections: ['Keep receivables moving', 'A more organized approach to invoices, payment reminders and collections.'],
-  about: ['A new perspective on payments', 'Nickel brings payments, net terms and collections together around one idea: helping businesses move forward.'],
-  pricing: ['Let’s find the right fit', 'Pricing details will be available when this service launches.'],
-  accountants: ['More clarity for every client', 'A shared view of business payments and receivables, designed to make the day-to-day easier.'],
-  signup: ['Make your next move', 'Choose a workspace to explore. No signup required.'],
-  contact: ['Let’s talk business', 'Try a 15-minute introduction. Choose a sample time below.'],
-  login: ['Welcome back', 'Take a look around your sample account. No credentials needed.']
+  payments: ['مدفوعات تواكب أعمالك', 'اجمع مدفوعات أعمالك في مكان واحد، مع رؤية واضحة للأموال الواردة والصادرة.'],
+  terms: ['امنح أعمالك مساحة للنمو', 'تساعدك آجال السداد المرنة على تنظيم مدفوعاتك بما يتناسب مع تدفقاتك النقدية.'],
+  collections: ['تابع تحصيل مستحقاتك', 'نظّم فواتيرك وتذكيرات الدفع وعمليات التحصيل من مكان واحد.'],
+  about: ['رؤية جديدة للمدفوعات', 'تجمع منصة عبدالرحمن المدفوعات وآجال السداد والتحصيل في تجربة واحدة، لمساعدة أعمالك على النمو.'],
+  pricing: ['اختر ما يناسب أعمالك', 'ستتوفر تفاصيل الأسعار عند إطلاق الخدمة.'],
+  accountants: ['رؤية أوضح لكل عميل', 'تابع مدفوعات العملاء ومستحقاتهم من واجهة واحدة تُسهّل مهامك اليومية.'],
+  signup: ['ابدأ خطوتك التالية', 'اختر مساحة عمل لتجربتها. لا تحتاج إلى إنشاء حساب.'],
+  contact: ['لنتحدث عن أعمالك', 'جرّب حجز لقاء تعريفي مدته ١٥ دقيقة. اختر أحد المواعيد التجريبية أدناه.'],
+  login: ['مرحبًا بعودتك', 'استكشف حسابك التجريبي دون الحاجة إلى بيانات دخول.']
 };
 const dialog = document.querySelector('dialog');
 const nav = document.querySelector('nav');
@@ -25,13 +25,13 @@ function closeDropdowns(except) {
 function closeNavigation() {
   nav.classList.remove('open');
   mobileToggle.setAttribute('aria-expanded', 'false');
-  mobileToggle.setAttribute('aria-label', 'Open navigation');
+  mobileToggle.setAttribute('aria-label', 'فتح القائمة');
   closeDropdowns();
 }
 mobileToggle.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   mobileToggle.setAttribute('aria-expanded', String(open));
-  mobileToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  mobileToggle.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
 });
 dropdownTriggers.forEach(button => button.addEventListener('click', () => {
   const open = button.getAttribute('aria-expanded') !== 'true';
@@ -56,7 +56,7 @@ document.querySelectorAll('[data-panel], [data-action]').forEach(button => butto
   closeNavigation();
   document.getElementById('dialog-title').textContent = panels[key][0];
   document.getElementById('dialog-description').textContent = panels[key][1];
-  document.getElementById('dialog-extra').textContent = ['signup', 'login', 'contact', 'pricing'].includes(key) ? '' : 'Explore the concept. Product availability and details will be announced at launch.';
+  document.getElementById('dialog-extra').textContent = ['signup', 'login', 'contact', 'pricing'].includes(key) ? '' : 'استكشف هذه التجربة الأولية. سنعلن تفاصيل المنتجات وتوفرها عند الإطلاق.';
   renderDemo(key);
   dialog.showModal();
   document.body.classList.add('dialog-open');
@@ -69,7 +69,7 @@ const motionToggle = document.querySelector('.motion-toggle');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 function updateMotionButton() {
   motionToggle.classList.toggle('is-paused', video.paused);
-  const label = video.paused ? 'Play background animation' : 'Pause background animation';
+  const label = video.paused ? 'تشغيل حركة الخلفية' : 'إيقاف حركة الخلفية';
   motionToggle.setAttribute('aria-label', label);
   motionToggle.title = label;
 }
@@ -85,29 +85,29 @@ function renderDemo(key) {
   const extra = document.getElementById('dialog-extra');
   const done = document.querySelector('.dialog-done');
   done.hidden = false;
-  document.querySelector('.dialog-eyebrow').textContent = 'NICKEL · DEMO';
+  document.querySelector('.dialog-eyebrow').textContent = 'عبدالرحمن · نسخة تجريبية';
   if (key === 'signup') {
-    extra.innerHTML = '<div class="demo-options"><button data-workspace="Business">Business <span>Payments, terms and collections</span></button><button data-workspace="Accountant">Accountant <span>A clearer view of your clients</span></button></div><p class="demo-note">Interactive preview. No account is created.</p>';
+    extra.innerHTML = '<div class="demo-options"><button data-workspace="الأعمال">الأعمال <span>المدفوعات وآجال السداد والتحصيل</span></button><button data-workspace="المحاسبة">المحاسبة <span>رؤية أوضح لحسابات عملائك</span></button></div><p class="demo-note">تجربة تفاعلية فقط. لن يتم إنشاء حساب.</p>';
     extra.querySelectorAll('[data-workspace]').forEach(button => button.addEventListener('click', () => showWorkspace(button.dataset.workspace)));
   } else if (key === 'login') {
-    extra.innerHTML = '<div class="sample-user"><span class="avatar">AC</span><div><strong>Alex Carter</strong><br>Acme Studio · Demo account</div></div><button class="button primary" id="open-demo">Open demo account</button><p class="demo-note">Sample data only. No sign-in required.</p>';
+    extra.innerHTML = '<div class="sample-user"><span class="avatar">ع</span><div><strong>عبدالرحمن</strong><br>مساحة عبدالرحمن · حساب تجريبي</div></div><button class="button primary" id="open-demo">افتح الحساب التجريبي</button><p class="demo-note">بيانات توضيحية فقط. لا يلزم تسجيل الدخول.</p>';
     done.hidden = true;
-    extra.querySelector('#open-demo').addEventListener('click', () => showWorkspace('Business'));
+    extra.querySelector('#open-demo').addEventListener('click', () => showWorkspace('الأعمال'));
   } else if (key === 'contact') {
-    extra.innerHTML = '<fieldset class="demo-times"><legend>Sample availability · Tomorrow</legend><label><input type="radio" name="time" value="10:00 AM" checked>10:00 AM</label><label><input type="radio" name="time" value="1:30 PM">1:30 PM</label><label><input type="radio" name="time" value="3:00 PM">3:00 PM</label></fieldset><button class="button primary" id="book-demo">Preview booking</button><p class="demo-note">Demo only. No meeting will be booked.</p>';
+    extra.innerHTML = '<fieldset class="demo-times"><legend>مواعيد تجريبية · غدًا</legend><label><input type="radio" name="time" value="١٠:٠٠ صباحًا" checked>١٠:٠٠ صباحًا</label><label><input type="radio" name="time" value="١:٣٠ مساءً">١:٣٠ مساءً</label><label><input type="radio" name="time" value="٣:٠٠ مساءً">٣:٠٠ مساءً</label></fieldset><button class="button primary" id="book-demo">جرّب الحجز</button><p class="demo-note">تجربة فقط. لن يتم حجز لقاء فعلي.</p>';
     done.hidden = true;
     extra.querySelector('#book-demo').addEventListener('click', () => {
       const time = extra.querySelector('input:checked').value;
-      document.getElementById('dialog-title').textContent = 'You’re all set. In theory.';
-      document.getElementById('dialog-description').textContent = 'Your sample introduction is tomorrow at ' + time + '. This is a preview—no meeting was booked or invitation sent.';
+      document.getElementById('dialog-title').textContent = 'اكتملت تجربة الحجز';
+      document.getElementById('dialog-description').textContent = 'موعدك التعريفي التجريبي غدًا الساعة ' + time + '. هذه معاينة فقط، ولم يتم حجز لقاء أو إرسال دعوة.';
       extra.replaceChildren(); done.hidden = false; done.focus();
     });
   }
 }
 function showWorkspace(type) {
-  document.getElementById('dialog-title').textContent = type + ' overview';
-  document.getElementById('dialog-description').textContent = 'Welcome to Acme Studio. Here’s how your payments could look.';
-  document.getElementById('dialog-extra').innerHTML = '<div class="demo-stats"><div><span>Collected this month</span><strong>$24,850<span class="currency">.00</span></strong></div><div><span>Awaiting payment</span><strong>$8,420<span class="currency">.00</span></strong></div></div><div class="demo-invoice"><span>INV–1042 · Bright & Co.</span><span class="paid">Paid</span></div><div class="demo-invoice"><span>INV–1043 · North Studio</span><span>Pending</span></div><p class="demo-note">Illustrative data. No real accounts or transactions.</p>';
+  document.getElementById('dialog-title').textContent = 'نظرة عامة على ' + type;
+  document.getElementById('dialog-description').textContent = 'مرحبًا بك في مساحة عبدالرحمن. إليك مثالًا على متابعة مدفوعاتك.';
+  document.getElementById('dialog-extra').innerHTML = '<div class="demo-stats"><div><span>المبالغ المحصّلة هذا الشهر</span><strong>$24,850<span class="currency">.00</span></strong></div><div><span>بانتظار الدفع</span><strong>$8,420<span class="currency">.00</span></strong></div></div><div class="demo-invoice"><span>فاتورة ١٠٤٢ · شركة إشراق</span><span class="paid">مدفوعة</span></div><div class="demo-invoice"><span>فاتورة ١٠٤٣ · استوديو الشمال</span><span>قيد الانتظار</span></div><p class="demo-note">بيانات توضيحية. لا توجد حسابات أو معاملات فعلية.</p>';
   document.querySelector('.dialog-done').hidden = false;
   document.querySelector('.dialog-done').focus();
 }
