@@ -22,7 +22,7 @@ Upload `dist/` into a new timestamped release directory, switch the `current` sy
 
 ## Accessibility
 
-Semantic HTML, keyboard-operable dropdowns, native modal focus management, mobile navigation, visible focus, a skip link, animation pause control, and reduced-motion support.
+Semantic HTML, keyboard-operable dropdowns, native modal focus management, mobile navigation, visible focus, a skip link, a hidden animation control, and reduced-motion support.
 
 ## Reference
 
